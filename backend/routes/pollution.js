@@ -22,7 +22,7 @@ router.post('/', auth, requireRole('admin'), async (req, res) => {
     }
 
     const reading = await PollutionReading.create({
-      location,
+      location:location.trim().toLowerCase(),
       sox,
       nox,
       co,
